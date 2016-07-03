@@ -1,0 +1,34 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+Xft.background: #cccccc
+
+URxvt*font:             xft:Terminus:size=14
+URxvt*boldFont:         xft:Terminus:size=14:bold
+
+URxvt*background:       Black
+URxvt*foreground:       White
+URxvt*termName:         screen-256color
+URxvt*geometry:         240x84
+URxvt*urlLauncher:      firefox
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  true
+URxvt*scrollColor:      #000000
+!URxvt.letterSpace:      -2
+!
+
+URxvt.perl-ext-common: default,clipboard
+URxvt.iso14755: False
+
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+URxvt.clipboard.copycmd:  xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+
+URxvt.intensityStyles: false
+

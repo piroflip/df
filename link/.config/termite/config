@@ -1,0 +1,12 @@
+[options]
+font = terminesspowerline 14
+#allow_bold = false
+cursor_blink = off
+cursor_shape = block
+browser = browser
+mouse_autohide = true
+
+[hints]
+font = terminus 10
+roundness = 0.0
+
