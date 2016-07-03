@@ -1,0 +1,84 @@
+set titlestring=
+set gui=none,tabs
+
+set focuscontent
+
+nnoremap J :tabprevious<cr>
+nnoremap K :tabnext<cr>
+
+nnoremap j 3j
+nnoremap k 3k
+
+nnoremap O :tabopen<space>
+nnoremap s :open<space>google<space>
+nnoremap S :tabopen<space>google<space>
+
+
+" youtube shortcuts
+nnoremap ,yp :stpause<cr>
+nnoremap ,yr :stplay<cr>
+
+" Reload .vimperatorrc
+nnoremap <C-R> :source ~/.vimperatorrc<cr>
+
+set defsearch=google
+set hintchars=jfkdhglsa
+" no sound
+set! ui.key.generalAccessKey=0
+" set! ui.caretWidth=2
+
+" don't resize when open images
+set! browser.enabel_automatic_image_resizing=false
+
+
+" ==============================
+" Default qmarks {{{
+" ==============================
+" rule: lowercase letters are reserved for default marks
+qmark m https://mail.google.com/
+qmark f https://www.facebook.com/
+qmark g https://github.com/
+qmark t https://twitter.com/
+qmark h https://news.ycombinator.com/
+qmark a about:addons
+qmark 2 https://2ch.hk/b
+" }}}
+" ==============================
+"
+"
+
+"javascript to hide statusbar
+noremap <silent> <F8> :js toggle_bottombar()<CR>
+noremap : :js toggle_bottombar('on')<CR>:
+noremap o :js toggle_bottombar('on')<CR>o
+noremap O :js toggle_bottombar('on')<CR>:tabopen<space>
+noremap t :js toggle_bottombar('on')<CR>t
+noremap T :js toggle_bottombar('on')<CR>T
+noremap / :js toggle_bottombar('on')<CR>/
+cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
+cnoremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
+
+:js << EOF
+function toggle_bottombar(p) {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    if (p == 'on'){
+        bb.style.height = '';
+        bb.style.overflow = '';
+        return;
+    }
+    if (p == 'off'){
+        bb.style.height = '0px';
+        bb.style.overflow = 'hidden';
+        return;
+    }
+    bb.style.height = (bb.style.height == '') ? '0px' : '';
+    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+}
+toggle_bottombar();
+EOF
+
+echo "vimperatorrc sourced"
+
+" vim: ft=vim ts=4 sw=4 sts=0 et fdm=marker fdc=3

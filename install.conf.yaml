@@ -1,14 +1,22 @@
 - clean: ['~']
 
 - link:
+    ~/.xinitrc:   link/.xinitrc
     ~/.bash_profile: link/.bash_profile
     ~/.bashrc: link/.bashrc
     ~/.zshrc: link/.zshrc
     ~/.zsh: link/.config/zsh
     ~/.zshenv: link/.zshenv
     ~/.tmux.conf: link/.tmux.conf
+    ~/.vimperatorrc:   link/.vimperatorrc
     ~/.config/nvim/init.vim:
       create: true
       path: link/.config/nvim/init.vim
+    ~/.config/termite:
+      create: true
+      path: link/.config/termite
+    ~/.config/herbstluftwm:
+      create: true
+      path: link/.config/herbstluftwm
 
 
