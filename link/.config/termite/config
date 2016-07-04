@@ -1,5 +1,5 @@
 [options]
-font = terminesspowerline 14
+font = terminesspowerline 10
 #allow_bold = false
 cursor_blink = off
 cursor_shape = block
